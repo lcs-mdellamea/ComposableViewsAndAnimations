@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0CDBB7CF281A0AE700F50E67 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDBB7CE281A0AE700F50E67 /* RootView.swift */; };
 		0CE20BF42818292300E0FA48 /* CustomComposable2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE20BF32818292300E0FA48 /* CustomComposable2View.swift */; };
 		0E84E4E825E547660052BC69 /* IAExampleOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E84E4E725E547650052BC69 /* IAExampleOneView.swift */; };
 		0E84E4F025E591F90052BC69 /* FontsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E84E4EF25E591F90052BC69 /* FontsView.swift */; };
@@ -36,7 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0CDBB7CE281A0AE700F50E67 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		0CE20BF32818292300E0FA48 /* CustomComposable2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomComposable2View.swift; sourceTree = "<group>"; };
 		0E84E4E725E547650052BC69 /* IAExampleOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAExampleOneView.swift; sourceTree = "<group>"; };
 		0E84E4EF25E591F90052BC69 /* FontsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsView.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				81331FB625E736AA00CFDB02 /* CustomComposableDescriptionView.swift */,
 				81331FBA25E736B600CFDB02 /* CustomComposableView.swift */,
 				0CE20BF32818292300E0FA48 /* CustomComposable2View.swift */,
-				0CDBB7CE281A0AE700F50E67 /* RootView.swift */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
@@ -292,7 +289,6 @@
 				0E8E8B0525E5442100012516 /* ImplicitAnimationsView.swift in Sources */,
 				81D2F46925E57FAE00ACF089 /* EAExampleOneView.swift in Sources */,
 				0E84E4F025E591F90052BC69 /* FontsView.swift in Sources */,
-				0CDBB7CF281A0AE700F50E67 /* RootView.swift in Sources */,
 				81D2F48325E7199300ACF089 /* TutorialsView.swift in Sources */,
 				81D2F47625E5851600ACF089 /* ExerciseOneView.swift in Sources */,
 				0E8E8AF425E5434100012516 /* ContentView.swift in Sources */,

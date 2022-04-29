@@ -8,49 +8,107 @@
 import SwiftUI
 
 struct CustomComposableView: View {
-
+    
     //MARK: Stored Properties
-
-    // Horizontal position
-    @State var xOffset = -100.0
-
-    @State var rotationAmount = 0.0
-
-    // Trigger to start animation
-    let timer = Timer.publish(every: 2.0, on: .main, in: .common).autoconnect()
-
+    
+    @State private var selectedView = false
+    
+    @State private var circleScaleFactor: CGFloat = 1.0
+    
+    @State private var rectangleScaleFactor: CGFloat = 1.0
+    
+    @State private var triangleScaleFactor: CGFloat = 1.0
+    
+    @State private var blurryView = true
+    
+    @State private var blurredDiameter: CGFloat = 10.0
+    
+    
+    //    @State private var unselectedView = true
+    
     //MARK: Computed Properties
-
+    
     var body: some View {
-        ZStack {
-
-            Circle()
-                .frame(width:50, height:50)
-
-            Text("OK")
-                .foregroundColor(.white)
-        }
-        .offset(x: xOffset, y: 0)
-        .rotationEffect(.degrees(rotationAmount), anchor: .center)
-        .animation(
-            Animation
-                .easeInOut(duration: 2)
-                .repeatForever(autoreverses: true))
-        .onReceive(timer) { input in
-            // Move the circle and text over to the right
-            xOffset = 100.0
-
-            // Turn once
-            rotationAmount = 360.0
-
-            // Turn off timer
-            timer.upstream.connect().cancel()
+        
+        HStack(spacing: 25) {
+            
+            Image(systemName: "circle.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .blur(radius: blurredDiameter)
+                .scaleEffect(circleScaleFactor)
+                .onTapGesture {
+                    selectedView = true
+                    
+                    blurryView = false
+                    
+                    if blurryView == false {
+                        blurredDiameter = 0.0
+                    }
+                    
+                    if circleScaleFactor < 2 {
+                        // Increase the size of the view by 1.
+                        circleScaleFactor += 1.0
+                    } else {
+                        circleScaleFactor = 1
+                        selectedView = false
+                    }
+                        
+            }
+            
+            Image(systemName: "rectangle.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .blur(radius: blurredDiameter)
+                .scaleEffect(rectangleScaleFactor)
+                .onTapGesture {
+                    selectedView = true
+                    
+                    blurryView = false
+                    
+                    if blurryView == false {
+                        blurredDiameter = 0.0
+                    }
+                    
+                    if rectangleScaleFactor < 2 {
+                        // Increase the size of the view by 1.
+                        rectangleScaleFactor += 1.0
+                    } else {
+                        rectangleScaleFactor = 1
+                        selectedView = false
+                    }
+                        
+            }
+            
+            Image(systemName: "arrowtriangle.up.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .blur(radius: blurredDiameter)
+                .scaleEffect(triangleScaleFactor)
+                .onTapGesture {
+                    selectedView = true
+                    
+                    blurryView = false
+                    
+                    if blurryView == false {
+                        blurredDiameter = 0.0
+                    }
+                    
+                    if triangleScaleFactor < 2 {
+                        // Increase the size of the view by 1.
+                        triangleScaleFactor += 1.0
+                    } else {
+                        triangleScaleFactor = 1
+                        selectedView = false
+                    }
+                        
+            }
         }
     }
-}
-
-struct CustomComposableView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomComposableView()
+    
+    struct CustomComposableView_Previews: PreviewProvider {
+        static var previews: some View {
+            CustomComposableView()
+        }
     }
 }

@@ -25,10 +25,9 @@ struct CustomComposableDescriptionView: View {
                     .padding(.top)
                 
                 Text("""
-                    Replace this with a description of how to use this view.
-
-                    If the view accepts a parameter, provide a control to enter the input below.
+                    My composable view provides the user with a useful animation that scales up and de-blurs a selected view, and re-blurs and scales the view back down when another view is selected.
                     """)
+                    .minimumScaleFactor(0.5)
                 
                 TextField("Enter an input value", text: $phrase)
                 
