@@ -13,15 +13,29 @@ struct CustomComposableView: View {
     
     @State private var selectedView = false
     
+    // View Scaling Variables
+    
     @State private var circleScaleFactor: CGFloat = 1.0
     
     @State private var rectangleScaleFactor: CGFloat = 1.0
     
     @State private var triangleScaleFactor: CGFloat = 1.0
     
-    @State private var blurryView = true
+    // View Blurring Variables
     
-    @State private var blurredDiameter: CGFloat = 10.0
+    @State private var circleBlurryView = true
+    
+    @State private var rectangleBlurryView = true
+    
+    @State private var triangleBlurryView = true
+    
+    //
+    
+    @State private var circleBlurredDiameter: CGFloat = 10.0
+    
+    @State private var rectangleBlurredDiameter: CGFloat = 10.0
+    
+    @State private var triangleBlurredDiameter: CGFloat = 10.0
     
     
     //    @State private var unselectedView = true
@@ -35,15 +49,15 @@ struct CustomComposableView: View {
             Image(systemName: "circle.fill")
                 .resizable()
                 .frame(width: 50, height: 50)
-                .blur(radius: blurredDiameter)
+                .blur(radius: circleBlurredDiameter)
                 .scaleEffect(circleScaleFactor)
                 .onTapGesture {
                     selectedView = true
                     
-                    blurryView = false
+                    circleBlurryView = false
                     
-                    if blurryView == false {
-                        blurredDiameter = 0.0
+                    if circleBlurryView == false {
+                        circleBlurredDiameter = 0.0
                     }
                     
                     if circleScaleFactor < 2 {
@@ -53,21 +67,25 @@ struct CustomComposableView: View {
                         circleScaleFactor = 1
                         selectedView = false
                     }
+                    
+                    if selectedView == false {
+                        circleBlurredDiameter = 10.0
+                    }
                         
             }
             
             Image(systemName: "rectangle.fill")
                 .resizable()
                 .frame(width: 50, height: 50)
-                .blur(radius: blurredDiameter)
+                .blur(radius: rectangleBlurredDiameter)
                 .scaleEffect(rectangleScaleFactor)
                 .onTapGesture {
                     selectedView = true
                     
-                    blurryView = false
+                    rectangleBlurryView = false
                     
-                    if blurryView == false {
-                        blurredDiameter = 0.0
+                    if rectangleBlurryView == false {
+                        rectangleBlurredDiameter = 0.0
                     }
                     
                     if rectangleScaleFactor < 2 {
@@ -77,21 +95,25 @@ struct CustomComposableView: View {
                         rectangleScaleFactor = 1
                         selectedView = false
                     }
+                    
+                    if selectedView == false {
+                        rectangleBlurredDiameter = 10.0
+                    }
                         
             }
             
             Image(systemName: "arrowtriangle.up.fill")
                 .resizable()
                 .frame(width: 50, height: 50)
-                .blur(radius: blurredDiameter)
+                .blur(radius: triangleBlurredDiameter)
                 .scaleEffect(triangleScaleFactor)
                 .onTapGesture {
                     selectedView = true
                     
-                    blurryView = false
+                    triangleBlurryView = false
                     
-                    if blurryView == false {
-                        blurredDiameter = 0.0
+                    if triangleBlurryView == false {
+                        triangleBlurredDiameter = 0.0
                     }
                     
                     if triangleScaleFactor < 2 {
@@ -100,6 +122,10 @@ struct CustomComposableView: View {
                     } else {
                         triangleScaleFactor = 1
                         selectedView = false
+                    }
+                    
+                    if selectedView == false {
+                        triangleBlurredDiameter = 10.0
                     }
                         
             }
